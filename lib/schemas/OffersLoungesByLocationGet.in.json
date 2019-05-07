@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "location": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "required": true,
+            "type": "string"
+        },
+        "cabinClass": {
+            "required": false,
+            "type": "string"
+        },
+        "tierCode": {
+            "required": false,
+            "type": "string"
+        },
+        "lang": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

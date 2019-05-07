@@ -1,0 +1,32 @@
+{
+    "type": "object",
+    "properties": {
+        "Accept": {
+            "required": true,
+            "type": "string"
+        },
+        "airportCode": {
+            "required": true,
+            "type": "string",
+            "default": "TXL"
+        },
+        "lang": {
+            "required": false,
+            "type": "string"
+        },
+        "limit": {
+            "required": false,
+            "type": "string",
+            "default": "20"
+        },
+        "offset": {
+            "required": false,
+            "type": "string",
+            "default": "0"
+        },
+        "LHoperated": {
+            "required": false,
+            "type": "boolean"
+        }
+    }
+}

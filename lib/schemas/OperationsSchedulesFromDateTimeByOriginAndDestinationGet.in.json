@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "properties": {
+        "origin": {
+            "required": true,
+            "type": "string"
+        },
+        "destination": {
+            "required": true,
+            "type": "string"
+        },
+        "fromDateTime": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "required": true,
+            "type": "string"
+        },
+        "directFlights": {
+            "required": false,
+            "type": "boolean"
+        },
+        "limit": {
+            "required": false,
+            "type": "string"
+        },
+        "offset": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

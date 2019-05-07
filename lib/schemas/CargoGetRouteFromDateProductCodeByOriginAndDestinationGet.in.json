@@ -1,0 +1,44 @@
+{
+    "type": "object",
+    "properties": {
+        "origin": {
+            "required": true,
+            "type": "string"
+        },
+        "destination": {
+            "required": true,
+            "type": "string"
+        },
+        "fromDate": {
+            "required": true,
+            "type": "string"
+        },
+        "productCode": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "FAN",
+                "FCO",
+                "FCP",
+                "FDG",
+                "FTF",
+                "FUN",
+                "FWN",
+                "YCO",
+                "YCP",
+                "YDG",
+                "YNB",
+                "YNZ",
+                "YTF",
+                "YUN",
+                "ZXB",
+                "ZXF",
+                "ZXR"
+            ]
+        },
+        "Accept": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

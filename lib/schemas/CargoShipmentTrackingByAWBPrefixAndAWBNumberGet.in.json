@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "aWBPrefix": {
+            "required": true,
+            "type": "string"
+        },
+        "aWBNumber": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

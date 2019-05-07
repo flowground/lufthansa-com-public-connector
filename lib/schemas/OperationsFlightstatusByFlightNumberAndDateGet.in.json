@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "flightNumber": {
+            "required": true,
+            "type": "string"
+        },
+        "date": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "required": true,
+            "type": "string"
+        },
+        "limit": {
+            "required": false,
+            "type": "string"
+        },
+        "offset": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

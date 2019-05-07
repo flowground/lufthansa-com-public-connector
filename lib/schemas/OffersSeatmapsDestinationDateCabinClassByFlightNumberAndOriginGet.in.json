@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "properties": {
+        "flightNumber": {
+            "required": true,
+            "type": "string"
+        },
+        "origin": {
+            "required": true,
+            "type": "string"
+        },
+        "destination": {
+            "required": true,
+            "type": "string"
+        },
+        "date": {
+            "required": true,
+            "type": "string"
+        },
+        "cabinClass": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

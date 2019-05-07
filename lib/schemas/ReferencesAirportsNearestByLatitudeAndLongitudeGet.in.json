@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "properties": {
+        "latitude": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "longitude": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "Accept": {
+            "required": true,
+            "type": "string"
+        },
+        "lang": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

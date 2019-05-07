@@ -1,0 +1,305 @@
+{
+    "title": "LH Public",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/lufthansa.com/public/1.0/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.lufthansa.com/v1",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "auth": {
+                "label": "auth",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://api.lufthansa.com/v1/oauth/token",
+            "token_uri": "https://api.lufthansa.com/v1/oauth/token"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "CargoGetRouteFromDateProductCodeByOriginAndDestinationGet": {
+            "main": "./lib/actions/CargoGetRouteFromDateProductCodeByOriginAndDestinationGet.js",
+            "title": "Retrieve all flights",
+            "description": "Retrieve a list of all possible flights (both direct and connecting) between two airports on a given date. Routes are available for today and up to days in the future.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CargoGetRouteFromDateProductCodeByOriginAndDestinationGet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CargoShipmentTrackingByAWBPrefixAndAWBNumberGet": {
+            "main": "./lib/actions/CargoShipmentTrackingByAWBPrefixAndAWBNumberGet.js",
+            "title": "Shipment Tracking",
+            "description": "With this tracking service you can easily retrieve your shipment or flight status information.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CargoShipmentTrackingByAWBPrefixAndAWBNumberGet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "OffersLoungesByLocationGet": {
+            "main": "./lib/actions/OffersLoungesByLocationGet.js",
+            "title": "Lounges",
+            "description": "Lounge information",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/OffersLoungesByLocationGet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "OffersSeatmapsDestinationDateCabinClassByFlightNumberAndOriginGet": {
+            "main": "./lib/actions/OffersSeatmapsDestinationDateCabinClassByFlightNumberAndOriginGet.js",
+            "title": "Seat Maps",
+            "description": "Cabin layout and seat characteristics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/OffersSeatmapsDestinationDateCabinClassByFlightNumberAndOriginGet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "OperationsFlightstatusArrivalsByAirportCodeAndFromDateTimeGet": {
+            "main": "./lib/actions/OperationsFlightstatusArrivalsByAirportCodeAndFromDateTimeGet.js",
+            "title": "Flight Status at Arrival Airport",
+            "description": "Status of all arrivals at a given airport up to 4 hours from the provided date time.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/OperationsFlightstatusArrivalsByAirportCodeAndFromDateTimeGet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "OperationsFlightstatusDeparturesByAirportCodeAndFromDateTimeGet": {
+            "main": "./lib/actions/OperationsFlightstatusDeparturesByAirportCodeAndFromDateTimeGet.js",
+            "title": "Flight Status at Departure Airport",
+            "description": "Status of all departures from a given airport up to 4 hours from the provided date time.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/OperationsFlightstatusDeparturesByAirportCodeAndFromDateTimeGet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "OperationsFlightstatusRouteDateByOriginAndDestinationGet": {
+            "main": "./lib/actions/OperationsFlightstatusRouteDateByOriginAndDestinationGet.js",
+            "title": "Flight Status by Route",
+            "description": "Status of flights between a given origin and destination on a given date.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/OperationsFlightstatusRouteDateByOriginAndDestinationGet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "OperationsFlightstatusByFlightNumberAndDateGet": {
+            "main": "./lib/actions/OperationsFlightstatusByFlightNumberAndDateGet.js",
+            "title": "Flight Status",
+            "description": "Status of a particular flight (boarding, delayed, etc.).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/OperationsFlightstatusByFlightNumberAndDateGet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "OperationsSchedulesFromDateTimeByOriginAndDestinationGet": {
+            "main": "./lib/actions/OperationsSchedulesFromDateTimeByOriginAndDestinationGet.js",
+            "title": "Flight Schedules",
+            "description": "Scheduled flights between given airports on a given date.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/OperationsSchedulesFromDateTimeByOriginAndDestinationGet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ReferencesAircraftByAircraftCodeGet": {
+            "main": "./lib/actions/ReferencesAircraftByAircraftCodeGet.js",
+            "title": "Aircraft",
+            "description": "List all aircraft types or one specific aircraft type.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ReferencesAircraftByAircraftCodeGet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ReferencesAirlinesByAirlineCodeGet": {
+            "main": "./lib/actions/ReferencesAirlinesByAirlineCodeGet.js",
+            "title": "Airlines",
+            "description": "List all airlines or one specific airline.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ReferencesAirlinesByAirlineCodeGet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ReferencesAirportsNearestByLatitudeAndLongitudeGet": {
+            "main": "./lib/actions/ReferencesAirportsNearestByLatitudeAndLongitudeGet.js",
+            "title": "Nearest Airports",
+            "description": "List the 5 closest airports to the given latitude and longitude, irrespective of the radius of the reference point.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ReferencesAirportsNearestByLatitudeAndLongitudeGet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ReferencesAirportsByAirportCodeGet": {
+            "main": "./lib/actions/ReferencesAirportsByAirportCodeGet.js",
+            "title": "Airports",
+            "description": "List all airports or one specific airport. All airports response is very large. It is possible to request the response in a specific language.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ReferencesAirportsByAirportCodeGet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ReferencesCitiesByCityCodeGet": {
+            "main": "./lib/actions/ReferencesCitiesByCityCodeGet.js",
+            "title": "Cities",
+            "description": "List all cities or one specific city. It is possible to request the response in a specific language.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ReferencesCitiesByCityCodeGet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ReferencesCountriesByCountryCodeGet": {
+            "main": "./lib/actions/ReferencesCountriesByCountryCodeGet.js",
+            "title": "Countries",
+            "description": "List all countries or one specific country. It is possible to request the response in a specific language.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ReferencesCountriesByCountryCodeGet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

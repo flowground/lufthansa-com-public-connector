@@ -1,0 +1,24 @@
+{
+    "type": "object",
+    "properties": {
+        "Accept": {
+            "required": true,
+            "type": "string"
+        },
+        "airlineCode": {
+            "required": true,
+            "type": "string",
+            "default": "LH"
+        },
+        "limit": {
+            "required": false,
+            "type": "string",
+            "default": "20"
+        },
+        "offset": {
+            "required": false,
+            "type": "string",
+            "default": "0"
+        }
+    }
+}

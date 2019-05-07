@@ -1,0 +1,28 @@
+{
+    "type": "object",
+    "properties": {
+        "Accept": {
+            "required": true,
+            "type": "string"
+        },
+        "countryCode": {
+            "required": true,
+            "type": "string",
+            "default": "DK"
+        },
+        "lang": {
+            "required": false,
+            "type": "string"
+        },
+        "limit": {
+            "required": false,
+            "type": "string",
+            "default": "20"
+        },
+        "offset": {
+            "required": false,
+            "type": "string",
+            "default": "0"
+        }
+    }
+}
